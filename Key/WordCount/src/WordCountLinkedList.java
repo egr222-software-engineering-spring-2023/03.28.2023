@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-// From Code Along 16-A
+// From Video 11-1 (Code Along 11-A)
 public class WordCountLinkedList {
     public static void main(String[] args) throws FileNotFoundException {
         // read file into a map of [word --> number of occurrences]
@@ -9,7 +9,9 @@ public class WordCountLinkedList {
         List<String> words = new LinkedList<>();
 
         System.out.println("Reading the file...");
-        Scanner input = new Scanner(new File("mobydick.txt"));
+        // for this example the file is in the PARENT folder of WordCount so I must use ../mobydick.txt to find it.
+        // If the file mobydick.txt was in the WordCount folder then I would not need to use ../ to define the full path.
+        Scanner input = new Scanner(new File("../mobydick.txt"));
         readfile(input, words);
 
         System.out.println("Removing the words...");
@@ -36,6 +38,10 @@ public class WordCountLinkedList {
         }
     }
 
+    // This method was created as part of video 11-1 (Code Along 11-A).
+    // There is an error in the video.  The author in the video types list.size() instead of words.size()
+    // He never gets a compiler error because he never attempts to execute the code.
+    // This particular example has a corrected version
     public static void everyOther(List<String> words) {
 //        using remove on a LinkedList without an iterator is SLOW because the list must be traversed from the front every time through the loop
 //        for (int i = 0; i < words.size(); i++) {

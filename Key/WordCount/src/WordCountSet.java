@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-// From Code Along 16-B
+// From Video 11-2 (Code Along 11-B)
 public class WordCountSet {
     public static void main(String[] args) throws FileNotFoundException {
         Set<String> words = new HashSet<>();    // order is arbitrary
